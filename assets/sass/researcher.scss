@@ -78,9 +78,6 @@ $y-medium: 1.0rem;
       margin: .5rem;
   }
 }
-.skills-container {
-
-}
 
 .column {
     a {
@@ -194,18 +191,34 @@ $y-medium: 1.0rem;
 
 .left {
   width: 25%;
-  margin-left: 1rem;
-  margin-right: 4rem;
 }
 
 .right {
   width: 25%;
-  margin-left: 4rem;
-  margin-right: 1rem;
 }
 
 .middle {
   width: $max-width;
+}
+
+@media screen and (max-width: 600px) {
+    .optional {
+        display: none !important;
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .column-layout {
+    flex-direction: column;
+  }
+  .middle {
+    width: 100%;
+  }
+  .right {
+    width: 100%;
+  }
 }
 
 
