@@ -201,7 +201,7 @@ $y-medium: 1.0rem;
   width: $max-width;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
     .optional {
         display: none !important;
     }
@@ -209,7 +209,7 @@ $y-medium: 1.0rem;
 
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   .column-layout {
     flex-direction: column;
   }
