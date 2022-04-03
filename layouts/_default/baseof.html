@@ -6,9 +6,24 @@
     {{ end }}
     <body>
         {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
+    <div class="column-layout" id="content">
+        <div class="column left">
+          <div class="toc-container sticky">
+            {{ .TableOfContents }}
+          </div>
         </div>
-        {{- partial "footer.html" . -}}
+        <div class="column middle">
+          {{- block "main" . }}{{- end }}
+        </div>
+        <div class="column right">
+        {{ with .Site.GetPage "skills" }}
+        <div class="skills-container sticky">
+          {{- block "main" . }}{{- end}}
+        </div>
+        {{ end }}
+        </div>
+    </div>
+    {{- partial "footer.html" . -}}
     </body>
+<script src="js/highlight.js"></script>
 </html>

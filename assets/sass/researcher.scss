@@ -1,10 +1,13 @@
 // Sizes
 $max-width: {{ .Param "style.pageWidth" | default "750px;" }};
 $avatar-size: {{ .Param "style.avatarSize" | default "90px;" }};
+$header-height: 4rem;
+
 
 // Colors
 $black: {{ .Param "style.colorBlack" | default "#222222" }};
 $red: {{ .Param "style.colorRed" | default "#dc3545" }};
+$background: {{ .Param "style.background" | default "#e0e0e0" }};
 
 // Font
 $font-family: {{ .Param "style.fontFamily" | default "Inconsolata" }};
@@ -47,6 +50,7 @@ $y-medium: 1.0rem;
     color: $black;
     font-family: $font-family;
     line-height: 1.2;
+    background: $background;
 }
 .container {
     max-width: $max-width;
@@ -58,7 +62,27 @@ $y-medium: 1.0rem;
 .nav-link {
     @extend %link-default;
 }
-#content {
+
+.sticky {
+  position: sticky;
+  top: $header-height;
+}
+
+.toc-container {
+  margin-top: 1rem;
+  color: $black;
+  a {
+      @extend %link-default;
+  }
+  p {
+      margin: .5rem;
+  }
+}
+.skills-container {
+
+}
+
+.column {
     a {
         @extend %link-default;
     }
@@ -86,6 +110,7 @@ $y-medium: 1.0rem;
         margin: -8px 0 0 16px;
         height: $avatar-size;
         width: $avatar-size;
+        object-fit: cover;
     }
     ol {
         counter-reset: list;
@@ -107,7 +132,7 @@ $y-medium: 1.0rem;
     }
     ul {
         list-style: inside;
-        padding-left: 2rem;
+        padding-left: 0.25rem;
         & > li {
             list-style-position: outside;
             margin-left: 1em;
@@ -158,3 +183,53 @@ $y-medium: 1.0rem;
         @extend %link-dark;
     }
 }
+.column-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: $header-height;
+}
+.column {
+}
+
+.left {
+  width: 25%;
+  margin-left: 1rem;
+  margin-right: 4rem;
+}
+
+.right {
+  width: 25%;
+  margin-left: 4rem;
+  margin-right: 1rem;
+}
+
+.middle {
+  width: $max-width;
+}
+
+
+html {
+  scroll-behavior: smooth;
+  background: $background;
+}
+
+.highlight-keyword {
+  background: #d9d8d3
+}
+
+.keyword-hover-source:hover {
+  background: #d9d8d3
+}
+
+.header {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: $background;
+  height: $header-height;
+  z-index: 2;
+}
+
