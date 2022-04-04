@@ -69,7 +69,7 @@ $y-medium: 1.0rem;
 }
 
 .toc-container {
-  margin-top: 1rem;
+  margin-right: 1rem;
   color: $black;
   a {
       @extend %link-default;
@@ -79,6 +79,11 @@ $y-medium: 1.0rem;
   }
 }
 
+li {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+
+}
 .column {
     a {
         @extend %link-default;
@@ -90,6 +95,7 @@ $y-medium: 1.0rem;
         font-size: medium;
         font-weight: bold;
         margin: $y-medium 0 $y-small 0;
+        scroll-margin-top: $header-height;
     }
     @for $i from 1 through 4 {
         h#{$i} {

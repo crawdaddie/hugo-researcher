@@ -13,12 +13,14 @@
           </div>
         </div>
         <div class="column middle">
-          {{- block "main" . }}{{- end }}
+          <div class="container">
+            {{- .Content }}
+          </div>
         </div>
         <div class="column right">
         {{ with .Site.GetPage "skills" }}
         <div class="skills-container sticky">
-          {{- block "main" . }}{{- end}}
+          {{ .Content }}
         </div>
         {{ end }}
         </div>
