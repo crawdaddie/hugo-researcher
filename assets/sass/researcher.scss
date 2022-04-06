@@ -8,6 +8,7 @@ $header-height: 4rem;
 $black: {{ .Param "style.colorBlack" | default "#222222" }};
 $red: {{ .Param "style.colorRed" | default "#dc3545" }};
 $background: {{ .Param "style.background" | default "#e0e0e0" }};
+$highlightKeyword: #c6c6c6;
 
 // Font
 $font-family: {{ .Param "style.fontFamily" | default "Inconsolata" }};
@@ -69,7 +70,9 @@ $y-medium: 1.0rem;
 }
 
 .toc-container {
+  margin-top: 1rem;
   margin-right: 1rem;
+  margin-left: 1rem;
   color: $black;
   a {
       @extend %link-default;
@@ -79,10 +82,27 @@ $y-medium: 1.0rem;
   }
 }
 
+.skills-container {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  color: $black;
+  a {
+      @extend %link-default;
+  }
+  p {
+      margin: .5rem;
+  }
+}
+
+.skills-container#h2 {
+  margin-top: 0px;
+}
 li {
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
 
+}
+.card {
 }
 .column {
     a {
@@ -234,11 +254,36 @@ html {
 }
 
 .highlight-keyword {
-  background: #d9d8d3
+  -webkit-transition:background-color 0.5s linear;
+  -moz-transition: background-color 0.5s linear;
+  -o-transition: background-color 0.5s linear;
+  background: $highlightKeyword;
+}
+
+.keyword-hover-source {
+  -webkit-transition:background-color 0.5s linear;
+  -moz-transition: background-color 0.5s linear;
+  -o-transition: background-color 0.5s linear;
+}
+
+.keyword-hover-target {
+  -webkit-transition:background-color 0.5s linear;
+  -moz-transition: background-color 0.5s linear;
+  -o-transition: background-color 0.5s linear;
 }
 
 .keyword-hover-source:hover {
-  background: #d9d8d3
+  -webkit-transition:background-color 0.5s linear;
+  -moz-transition: background-color 0.5s linear;
+  -o-transition: background-color 0.5s linear;
+  background: $highlightKeyword;
+}
+
+.keyword-hover-target:hover {
+  -webkit-transition:background-color 0.5s linear;
+  -moz-transition: background-color 0.5s linear;
+  -o-transition: background-color 0.5s linear;
+  background: $highlightKeyword;
 }
 
 .header {
