@@ -100,7 +100,9 @@ $y-medium: 1.0rem;
 li {
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
-
+  p {
+    margin-bottom: 0;
+  }
 }
 .card {
 }
@@ -109,7 +111,7 @@ li {
         @extend %link-default;
     }
     p {
-        margin-bottom: $y-small;
+        // margin-bottom: $y-small;
     }
     h1, h2, h3, h4, h5, h6 {
         font-size: medium;
