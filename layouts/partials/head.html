@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
     {{ with .Site.Params.favicon }}
-        <link rel="icon" type="image/ico" href="{{ . | absURL }}">
+    <link rel="icon" href={{ . }}>
     {{ end }}
 
     {{ with .OutputFormats.Get "rss" -}}
